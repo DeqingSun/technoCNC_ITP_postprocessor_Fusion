@@ -713,7 +713,7 @@ function onSection() {
     
     // retract to safe plane
     retracted = true;
-    writeBlock(gFormat.format(79), "Z" + xyzFormat.format(0)); // retract
+    writeBlock(gFormat.format(79), "Z" + xyzFormat.format(0.1)); // retract
     forceXYZ();
     if ((insertToolCall && !isFirstSection()) || forceSmoothing) {
       disableLengthCompensation();
@@ -1439,7 +1439,7 @@ function onClose() {
 
   onCommand(COMMAND_COOLANT_OFF);
 
-  writeBlock(gFormat.format(79), "Z" + xyzFormat.format(0)); // retract
+  writeBlock(gFormat.format(79), "Z" + xyzFormat.format(0.1)); // retract
   retracted = true;
   
   disableLengthCompensation(true);
